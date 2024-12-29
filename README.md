@@ -1,2 +1,2 @@
 # stock-screener
-Screens stock tickers for fundamentals to find strong value stocks based on multiple metrics
+Screen S&P500 stock tickers for fundamentals to find strong value based on multiple metrics
