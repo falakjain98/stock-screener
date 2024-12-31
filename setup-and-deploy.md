@@ -91,4 +91,40 @@
     - Go back to the EventBridge console and navigate to Rules to see your rule's status.
     - You can see the next scheduled execution and verify if the rule triggers the job at the right time.
 
-After setup, deploy the pipeline using steps on the [deploy](deploy.md) file.
+### 5. Create input and output S3 paths as defined in the scripts
+  - Here are the S3 buckets and folders I have used for my project. The same details can be found in the scripts/main.py file and should be updated by you during project setup
+    - bucket = 'fin-fj'
+    - input_file_prefix = 'input'
+      - the input file is stored in fin-fj/input/sp500_tickers.csv
+      - the input file used can be found on (Kaggle)[https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks?resource=download]
+      - I have only retained the ticket symbol, the stock's long name, its sector and its industry and saved the file as sp500_tickers.csv
+    - output_file_prefix = 'output'
+      - the output file is stored in fin-fj/output/sp500/<YYY-MM-DD>/sp500_tickers.csv
+      - in the above path <YYYY-MM-DD> implies the date of the project run
+
+### 6. Allow the batch job to run on a weekly cadence and save the output to the S3 folder specified above
+- For testing purposed, you can also clone wht batch job and trigger it manually
+
+### 7. Use AWS Glue crawlers to create data catalog
+- Set Up AWS Glue Job:
+  - Create an AWS Glue ETL job to extract data from the S3 bucket and load it into the RDS database.
+  - Glue can handle a variety of file formats like CSV, Parquet, and JSON.
+- Use Glue Data Catalog:
+  - Catalog your S3 files using a Glue Crawler to define the schema.
+  - Set up a Glue Job to read from the S3 location, perform transformations (if necessary), and write the data to the RDS instance.
+- Schedule the Glue Job:
+  - Schedule the Glue job to run at regular intervals using Amazon EventBridge or manually trigger it based on new file uploads.
+- This data catalog can be used to query the S3 data from AWS Athena
+
+### Connect Tableau to output data using Athena connector
+- Open Tableau and choose Amazon Athena as your data source.
+- Enter Connection Details:
+  - AWS Region: Select the region where your Athena tables and S3 data are located.
+  - S3 Staging Directory: Provide the full S3 path to the bucket where query results will be temporarily stored.
+  - Authentication:
+    - Use either Access Key & Secret Key or the AWS Profile.
+  - Database: Select the database you wish to query from Athena.
+- Sign In: After entering the necessary details, click Sign In to establish the connection.
+- Choose Tables or Write Custom Queries:
+  - Once connected, you will be able to select tables or write custom SQL queries to query your S3 data via Athena.
+- You can view and replicate the Tableau dashboard that I have connected using (this link)[https://public.tableau.com/views/SP500-Stock-Screener/StockScreener?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]

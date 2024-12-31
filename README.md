@@ -19,7 +19,5 @@ The following technologies are utilized in this project:
 <img width="849" alt="image" src="https://github.com/user-attachments/assets/047d73c7-06fa-412b-b2f9-47c231621428" />
 
 ### Setup & Deploy
-Please refer to [setup](setup.md) file for more details regarding infrastructure setup.
-
-After setup, deploy the pipeline using steps on the [deploy](deploy.md) file.
+Please refer to [setup-and-deploy](setup-and-deploy.md) file for more details regarding infrastructure setup and project deployment.
 
