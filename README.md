@@ -18,6 +18,10 @@ The following technologies are utilized in this project:
 
 <img width="849" alt="image" src="https://github.com/user-attachments/assets/047d73c7-06fa-412b-b2f9-47c231621428" />
 
+### Project Dashboard
+
+<img width="1072" alt="image" src="https://github.com/user-attachments/assets/7612846d-257c-4e0a-a39d-1a42734f3f7d" />
+
 ### Setup & Deploy
 Please refer to [setup-and-deploy](setup-and-deploy.md) file for more details regarding infrastructure setup and project deployment.
 
