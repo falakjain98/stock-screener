@@ -2,9 +2,9 @@
 
 ## Steps to create infrastructure and set up project (I used a Linux VM running on EC2)
 
-1. Clone this git repo.
+### 1. Clone this git repo.
 
-2. Build a docker container named stock-screener, tag it and push to ECR.
+### 2. Build a docker container named stock-screener, tag it and push to ECR.
   - Navigate to the scripts folder to locate the python scripts and docker container definition file (Dockerfile)
   - Install docker on the VM using the follow commands if not already installed:
   ```
@@ -19,7 +19,7 @@
   - Authenticate AWS ECR ```aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin <ECR Repository URI>```
   - Push the tagged image to the ECR repository ```docker push <ECR Repository URI>:latest```
 
-3. Set up AWS Batch environment.
+### 3. Set up AWS Batch environment.
   - Create IAM role for S3 access
   - Create a compute environment:
     - Go to the AWS Batch console.
@@ -55,7 +55,7 @@
     - View logs in Amazon CloudWatch to ensure there are no errors during execution.
     - Once the job completes, verify the output in your S3 bucket to ensure the stock data is written correctly.
 
-4. Create an EventBridge rule for AWS Batch job scheduling
+### 4. Create an EventBridge rule for AWS Batch job scheduling
   - Create or Modify an IAM Role for EventBridge Scheduler with the following managed policies:
     - AWSBatchSubmitJob: This policy allows EventBridge to submit jobs to AWS Batch.
     - CloudWatchLogsFullAccess: (Optional) If you want EventBridge to log the job output to CloudWatch, this permission is useful for debugging and monitoring.
