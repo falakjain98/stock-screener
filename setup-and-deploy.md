@@ -3,6 +3,7 @@
 ## Steps to create infrastructure and set up project (I used a Linux VM running on EC2)
 
 ### 1. Clone this git repo.
+- You can add your own custom stock picking logic to the [main.py](scripts/main.py) python file
 
 ### 2. Build a docker container named stock-screener, tag it and push to ECR.
   - Navigate to the scripts folder to locate the python scripts and docker container definition file (Dockerfile)
@@ -96,7 +97,7 @@
     - bucket = 'fin-fj'
     - input_file_prefix = 'input'
       - the input file is stored in fin-fj/input/sp500_tickers.csv
-      - the input file used can be found on (Kaggle)[https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks?resource=download]
+      - the input file used can be found on [Kaggle](https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks?resource=download)
       - I have only retained the ticket symbol, the stock's long name, its sector and its industry and saved the file as sp500_tickers.csv
     - output_file_prefix = 'output'
       - the output file is stored in fin-fj/output/sp500/<YYY-MM-DD>/sp500_tickers.csv
@@ -127,4 +128,4 @@
 - Sign In: After entering the necessary details, click Sign In to establish the connection.
 - Choose Tables or Write Custom Queries:
   - Once connected, you will be able to select tables or write custom SQL queries to query your S3 data via Athena.
-- You can view and replicate the Tableau dashboard that I have connected using (this link)[https://public.tableau.com/views/SP500-Stock-Screener/StockScreener?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
+- You can view and replicate the Tableau dashboard that I have connected using [this link](https://public.tableau.com/views/SP500-Stock-Screener/StockScreener?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
