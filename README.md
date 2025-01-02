@@ -22,6 +22,20 @@ The following technologies are utilized in this project:
 
 <img width="1072" alt="image" src="https://github.com/user-attachments/assets/7612846d-257c-4e0a-a39d-1a42734f3f7d" />
 
+### Project Description
+
+1. The aim of the project is to identify S&P500 stocks that filter strong investment opportunities based on fundamentals on a weekly basis.
+2. The stocks are evaluated on several metrics and criteria which are loosely based on the [Warren Buffet and the Interpretation of Finanicial Statements](https://www.youtube.com/watch?v=lBBXmim527A&t=685s) video by [@TheSwedishInvestor](https://www.youtube.com/@TheSwedishInvestor).
+3. The yfinance python module is used to pull the most up to date fundamentals data for S&P500 stocks.
+4. In the dashboard you will be able to see several details regarding each stock in the Fundamentals section. You can click on one of the stock tickers and then scroll down to find quarterly and annual earnings, revenue, debt and several other metrics for the selected ticker
+5. The symbol on the right in the Fundamentals section is green when all of the below conditions are met:
+  * P/E Ratio is between 0 and 50
+  * P/B Ratio is less than the industry average or less than 10
+  * Gross margin is more than 20% and net margin is more than 10%
+  * Return on equity is more than 5% and return on assests is more than 5% too.
+6. If some of the above conditions are met, the symbol to the right is yellow and if none of the conditions are met then it is red!
+7. A reader can view this dashboard on a weekly basis to make investment decisions.
+
 ### Setup & Deploy
 Please refer to [setup-and-deploy](setup-and-deploy.md) file for more details regarding infrastructure setup and project deployment.
 
