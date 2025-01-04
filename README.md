@@ -34,7 +34,7 @@ You can view the above Tableau dashboard using [this link](https://public.tablea
   * P/E Ratio is between 0 and 50
   * P/B Ratio is less than the industry average or less than 10
   * Gross margin is more than 20% and net margin is more than 10%
-  * Return on equity is more than 5% and return on assests is more than 5% too.
+  * Return on equity is more than 5% and return on assets is more than 5% too.
 6. If some of the above conditions are met, the symbol to the right is yellow and if none of the conditions are met then it is red!
 7. A reader can view this dashboard on a weekly basis to make investment decisions.
 
