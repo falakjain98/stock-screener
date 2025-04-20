@@ -22,7 +22,7 @@ The following technologies are utilized in this project:
 
 <img width="1072" alt="image" src="https://github.com/user-attachments/assets/7612846d-257c-4e0a-a39d-1a42734f3f7d" />
 
-You can view the above Tableau dashboard using [this link](https://public.tableau.com/views/SP500-Stock-Screener/StockScreener?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+You can view the above Tableau dashboard using [this link](https://public.tableau.com/views/SP500-Stock-Screener_17451228916630/StockScreener?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ### Project Description
 
